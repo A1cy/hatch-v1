@@ -1,0 +1,77 @@
+.navbar__announcement {
+  background: var(--color-charcoal);
+}
+.announcement-bar {
+  --gap: 40px;
+  position: relative;
+  z-index: 9;
+  overflow: hidden;
+  color: #fff;
+}
+.announcement-bar__wrapper {
+  position: relative;
+}
+.announcement-bar__items {
+  width: 100%;
+  list-style: none;
+  margin: 0;
+  display: flex;
+  gap: var(--gap);
+}
+.announcement-bar__items > li {
+  margin: 0;
+  width: fit-content;
+}
+.announcement-bar__item {
+  line-height: 130%;
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: -0.5px;
+}
+.announcement-bar__item:hover {
+  color: #fff;
+}
+.announcement-bar__close {
+  height: 100%;
+  padding: 0 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 9;
+  background-color: var(--color-charcoal);
+}
+.announcement-bar__close svg path {
+  stroke: #fff;
+}
+.page-cart .announcement-bar {
+  display: none;
+}
+.marquee {
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  gap: var(--gap);
+}
+.marquee__content {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-around;
+  min-width: 100%;
+  gap: var(--gap);
+  animation: scroll var(--duration, 20s) linear infinite;
+}
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - var(--gap, 0)));
+  }
+}
